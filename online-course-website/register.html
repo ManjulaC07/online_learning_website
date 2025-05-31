@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skybound Academy | Register</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body class="body_reg">
+
+<!-- Navbar -->
+<nav class="navbar_reg">
+  <div class="logo-reg">Skybound Academy</div>
+  <div class="desktop-more_reg">
+    <button class="more-btn_reg">More ▾</button>
+
+    <ul type="none"  class="desktop-nav_reg">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="my_course.html">My Courses</a></li>
+    </ul>
+  </div>
+  <div class="search-container_reg">
+    <i class="fas fa-search"></i>
+    <input type="text" placeholder="Search courses..." />
+  </div>
+  <div class="auth-buttons_reg">
+    <button class="login-btn_reg">Login</button>
+    <button class="signup-btn_reg">Sign Up</button>
+  </div>
+</nav>
+
+<!-- Hamburger for mobile -->
+<div class="hamburger_reg" id="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<ul type="none"  class="mobile-nav_reg" id="mobile-nav">
+  <li><a href="home.html">Home</a></li>
+  <li><a href="about.html">About Us</a></li>
+  <li><a href="contact.html">Contact</a></li>
+  <li><a href="my_course.html">My Courses</a></li>
+</ul>
+
+<main class="main_reg" style="background:none;">
+
+  <section data-aos="fade-up">
+    <h2 id="course-name">Register for Course</h2>
+    <p id="course-desc"></p>
+
+    <h3>What You'll Learn</h3>
+    <p id="course-learn">Enhance your skills through hands-on projects, expert-led video lessons, and real-world use cases tailored to your learning pace.</p>
+  </section>
+
+  <section class="form-section" data-aos="fade-up">
+    <h2>Create Your Account</h2>
+    <form action="#" method="POST" class="register-form">
+      <label>Full Name:</label>
+      <input type="text" name="fullname" required><br>
+
+      <label>Email Address:</label>
+      <input type="email" name="email" required><br>
+
+      <label>Password:</label>
+      <input type="password" name="password" required><br>
+
+      <label>Phone Number:</label>
+      <input type="tel" name="phone" required><br>
+
+      <label>Age:</label>
+      <input type="number" name="age" min="10" max="100"><br>
+
+      <label>Gender:</label>
+      <select name="gender">
+        <option value="">--Select--</option>
+        <option>Female</option>
+        <option>Male</option>
+        <option>Other</option>
+      </select><br>
+
+      <label>Country:</label>
+      <input type="text" name="country"><br>
+
+      <label>Preferred Course:</label>
+      <input type="text" name="preferred_course" id="selected-course" readonly><br>
+
+
+      <label>Why do you want to join this course?</label>
+      <textarea name="reason" rows="4"></textarea><br>
+
+<button type="submit">Register Now</button>
+
+    </form>
+
+    
+        <div id="registration-success" class="success-popup">
+  Registration successful!
+</div>
+    
+
+  </section>
+</main>
+
+<footer class="footer_reg">
+  <div class="footer-content">
+    <p>&copy; 2025 Skybound Academy. All rights reserved.</p>
+    <div class="footer-links_reg">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+<script>
+  // Mobile nav toggle
+  const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('mobile-nav');
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+
+  // URL Params for course and desc
+  const urlParams = new URLSearchParams(window.location.search);
+  const course = urlParams.get('course');
+  const desc = urlParams.get('desc');
+
+  if (course && desc) {
+    document.getElementById('course-name').textContent = course;
+    document.getElementById('course-desc').textContent = desc;
+    document.getElementById('selected-course').value = course;
+  } else {
+    document.getElementById('course-name').textContent = "Register";
+    document.getElementById('course-desc').textContent = "Choose a course from our catalog to get started.";
+  }
+
+  const backgroundImages = {
+  "Web Development": "images/web_development.jpg",
+  "Python Programming": "images/python.jpg",
+  "Java Programming": "images/java.jpg",
+  "C & C++ Essentials": "images/c&c++.jpg",
+  "Data Science & AI": "images/data-science.jpg",
+  "React JS Development": "images/react-js.jpg",
+  "Node.js & Express": "images/node.js-express.jpg",
+  "Cyber Security": "images/cyber-security.jpg",
+  "Cloud Computing": "images/cloud-computing.jpg",
+  "Blockchain Fundamentals": "images/block-chain.jpg",
+  "UI/UX Design": "images/ui-ux.jpg",
+  "Android App Development": "images/android-dev.jpg"
+};
+
+if (course && backgroundImages[course]) {
+  document.body.style.backgroundImage = `url('${backgroundImages[course]}')`;
+  document.body.style.backgroundSize = "cover";
+  document.body.style.backgroundRepeat = "no-repeat";
+  document.body.style.backgroundAttachment = "fixed";
+  document.body.style.backgroundPosition = "center";
+}
+
+document.body.style.setProperty('background-image', `url('${backgroundImages[course]}')`, 'important');
+
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector(".register-form");
+  const popup = document.getElementById("registration-success");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const preferredCourseValue = form.querySelector('input[name="preferred_course"]').value;
+  const fullname = form.querySelector('input[name="fullname"]').value;
+
+  // Get existing courses from localStorage or create empty array
+  let registeredCourses = JSON.parse(localStorage.getItem('registeredCourses')) || [];
+
+  // Add new registration (avoid duplicates if you want)
+  registeredCourses.push({
+    fullname: fullname,
+    course: preferredCourseValue,
+    date: new Date().toLocaleDateString()
+  });
+
+  // Save back to localStorage
+  localStorage.setItem('registeredCourses', JSON.stringify(registeredCourses));
+
+  // Show success message, reset form etc. (your existing code)
+  popup.style.display = "block";
+  form.reset();
+  form.querySelector('input[name="preferred_course"]').value = preferredCourseValue;
+
+  setTimeout(() => {
+    popup.style.display = "none";
+  }, 3000);
+});
+
+
+});
+
+
+</script>
+
+</body>
+</html>
