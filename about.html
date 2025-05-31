@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Course | Home</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+</head>
+<body>
+<nav class="navbar">
+  <div class="logo">Skybound Academy</div>
+
+   <!-- Desktop dropdown -->
+  <div class="desktop-more">
+    <button class="more-btn">More ▾</button>
+    <ul type=none class="desktop-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="my_course.html">My Courses</a></li>
+    </ul>
+  </div>
+
+  <div class="my_course">
+    <button class="course-btn">Mycourse</button>
+  </div>
+
+  <div class="search-container">
+    <i class="fas fa-search"></i>
+    <input type="text" placeholder="Search courses..." />
+  </div>
+
+   <div class="auth-buttons">
+    <button class="login-btn">Login</button>
+    <button class="signup-btn">Sign Up</button>
+  </div>
+</nav>
+
+  <!-- Hamburger for mobile -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <ul type="none"  class="mobile-nav" id="mobile-nav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="my_course.html">My Courses</a></li>
+  </ul>
+</nav>
+<section class="about-us">
+<section class="about-section">
+  <div class="about-container">
+    <h1>Who We Are</h1>
+    <p>
+      At <strong>Skybound Academy</strong>, we believe learning should be engaging, accessible, and tailored to every individual’s journey. We're a passionate team of educators, developers, and creators working to revolutionize online education.
+    </p>
+
+    <h2>What Makes Us Unique</h2>
+    <ul>
+      <li>🌐 100% online, self-paced courses</li>
+      <li>🎓 Real certifications to boost your resume</li>
+      <li>🧠 AI-based progress tracking & smart suggestions</li>
+      <li>💬 Community forums and expert mentoring</li>
+    </ul>
+
+    <h2>Our Story</h2>
+    <p>
+      Founded in 2024, Skybound Academy started as a small project to help friends learn coding. Today, we've helped thousands gain real-world skills through interactive learning, hands-on projects, and expert-led content.
+    </p>
+
+    <p>
+      We’re here to guide you—whether you're starting a new career, upskilling, or just curious. Let’s shape your future together!
+    </p>
+  </div>
+</section>
+
+
+
+
+<footer>
+  <div class="footer-content">
+    <p>&copy; 2025 Skybound Academy. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+    </div>
+  </div>
+</footer>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('.mobile-nav'); // Fixed
+
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+});
+
+</script>
+
+</body>
+</html>

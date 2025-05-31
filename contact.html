@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Course | Home</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+</head>
+<body>
+<nav class="navbar">
+  <div class="logo">Skybound Academy</div>
+
+   <!-- Desktop dropdown -->
+  <div class="desktop-more">
+    <button class="more-btn">More ▾</button>
+    <ul  type="none" class="desktop-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="my_course.html">My Courses</a></li>
+    </ul>
+  </div>
+
+  <div class="my_course">
+    <button class="course-btn">Mycourse</button>
+  </div>
+
+  <div class="search-container">
+    <i class="fas fa-search"></i>
+    <input type="text" placeholder="Search courses..." />
+  </div>
+
+   <div class="auth-buttons">
+    <button class="login-btn">Login</button>
+    <button class="signup-btn">Sign Up</button>
+  </div>
+</nav>
+
+  <!-- Hamburger for mobile -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <ul type=none class="mobile-nav" id="mobile-nav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="my_course.html">My Courses</a></li>
+  </ul>
+</nav>
+<main class="contact-main">
+  <!-- Header -->
+  <section class="contact-header" data-aos="fade-up">
+  <div class="contact-image">
+    <img src="/images/practice.jpg" alt="Contact Us Illustration" />
+  </div>
+
+    <p>Need assistance? We're here to help with anything related to your courses, account, or general queries.</p>
+  </section>
+
+  <!-- Help & Support -->
+  <section class="help-support" data-aos="fade-up" data-aos-delay="100">
+    <h3>Help & Support</h3>
+    <ul>
+      <li><strong>Account Issues:</strong> Trouble logging in or updating your profile? Contact support.</li>
+      <li><strong>Enrollment Problems:</strong> Can't enroll or access your course content? We can assist.</li>
+      <li><strong>Technical Support:</strong> Site not working properly? Our dev team is on it!</li>
+      <li><strong>Payment Queries:</strong> Problems with payments, receipts, or refunds? Let us know.</li>
+    </ul>
+  </section>
+
+  <!-- FAQs -->
+  <section class="faq-section" data-aos="fade-up" data-aos-delay="200">
+    <h3>Frequently Asked Questions</h3>
+    <div class="faq">
+      <h4>How do I enroll in a course?</h4>
+      <p>Go to the course page, click "Enroll Now", and follow the instructions.</p>
+    </div>
+    <div class="faq">
+      <h4>Can I access my courses on mobile?</h4>
+      <p>Yes! Our website is fully responsive and works great on mobile devices.</p>
+    </div>
+    <div class="faq">
+      <h4>Where can I see my progress?</h4>
+      <p>Visit the "My Courses" section after logging in to track your progress.</p>
+    </div>
+    <div class="faq">
+      <h4>How do I reset my password?</h4>
+      <p>Click on "Forgot Password" on the login page to reset it via email.</p>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="contact-form" data-aos="fade-up" data-aos-delay="300">
+    <h3>Send Us a Message</h3>
+    <form action="#" method="POST">
+      <label for="name">Name:</label><br />
+      <input type="text" name="name" required /><br /><br />
+
+      <label for="email">Email:</label><br />
+      <input type="email" name="email" required /><br /><br />
+
+      <label for="message">Message:</label><br />
+      <textarea name="message" rows="4" required></textarea><br /><br />
+
+      <input type="submit" value="Send Message" />
+    </form>
+  </section>
+
+  <!-- Contact Details -->
+  <section class="contact-details" data-aos="fade-up" data-aos-delay="400">
+    <h3>Contact Information</h3>
+    <p><strong>Email:</strong> support@skyboundacademy.com</p>
+    <p><strong>Phone:</strong> +91 98765 43210</p>
+    <p><strong>Address:</strong> 123, Learning Street, Chennai, Tamil Nadu, India</p>
+  </section>
+</main>
+
+
+<footer>
+  <div class="footer-content">
+    <p>&copy; 2025 Skybound Academy. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+    </div>
+  </div>
+</footer>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('.mobile-nav'); // Fixed
+
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+});
+
+</script>
+
+</body>
+</html>
